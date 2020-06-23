@@ -1,0 +1,181 @@
+html {
+  scroll-behavior: smooth;
+  color:white;
+}
+
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family:  Roboto;
+  background-color: #080e18;
+  color: white;
+}
+
+.mystyle{
+  margin: 0;
+  font-size: 28px;
+  font-family: Averia Libre;
+  background-color: white;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: 080e16;
+    }
+}
+
+
+.header {
+  padding: 0px;
+  text-align: center;
+
+}
+#image2{
+  padding: 0px;
+  text-align: center;  
+  
+}
+
+/*Navigation area */
+#navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: #05090f;
+}
+#test{
+	 padding-top: -15px;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #99AAB5;
+  color: black;
+ .invert { filter: invert(100%); }
+}
+
+#navbar a.active {
+  background-color: grey;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.topnav-right {
+  float: right;
+
+}
+/* End Navigation area */
+
+div .div{
+	background-color: #000;
+	height: 22px;
+}
+
+#title{
+	text-align:center;
+	font-family: Roboto;
+	text-shadow: 2px 2px black;
+	size: 133px;
+	color:white;
+}
+
+#intro{
+	text-align:center;
+	font-family: Roboto;
+	color:white;
+
+}
+
+#discordtext{
+	text-align:center;
+	font-family: Roboto;
+	text-shadow: 2px 2px black;
+	size: 133px;
+	color:white;
+}
+
+#discordtext2{
+
+	padding-top: -70px;
+	text-align:center;
+	font-family: Roboto;
+	text-shadow: 2px 2px black;
+	size: 13px;
+	color:white;
+} 
+
+#discord{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color:white;
+} 
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  table {
+    width:100%;
+	color:white;
+  }
+
+table{
+	border-width: 10px;
+	border-color: #3333FF;
+	border-collapse: collapse;
+	font-family: Roboto;
+	color:white;
+	
+}
+
+table td 1{
+	background-color: #336666;
+	color: white;
+}
+table-caption{
+	text-align: center;
+	color:white;
+	}
+	
+	
+/*Footer*/
+
+footer {
+    display: block;
+}
+
+
+/* social area in the footer */
+#social{
+  overflow: hidden;
+}
+
+#social a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}

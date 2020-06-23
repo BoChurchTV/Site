@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: bochurchtv.netlify.com
+Token: 0b639aa07393c15044d10467c19de33bf88c283c54c80020211745367832e6b2
