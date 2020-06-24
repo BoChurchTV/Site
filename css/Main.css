@@ -34,6 +34,7 @@ p{
 .header {
   padding: 0px;
   text-align: center;
+  font-family: acme;
 
 }
 #image2{
@@ -47,6 +48,7 @@ p{
   width: 100%;
   overflow: hidden;
   background-color: #05090f;
+  font-family: acme;
 }
 #test{
 	 padding-top: -15px;
@@ -59,6 +61,7 @@ p{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: acme;
   font-size: 17px;
 }
 
@@ -118,6 +121,7 @@ div .div{
 	text-shadow: 2px 2px black;
 	size: 133px;
 	color:white;
+	font-family: acme;
 }
 
 #discordtext2{
@@ -127,6 +131,7 @@ div .div{
 	text-shadow: 2px 2px black;
 	size: 13px;
 	color:white;
+	font-family: acme;
 } 
 
 #discord{
@@ -140,6 +145,7 @@ div .div{
   table {
     width:100%;
 	color:white;
+	font-family: acme;
   }
 
 table{
@@ -152,10 +158,12 @@ table{
 
 table td 1{
 	background-color: #336666;
+	font-family: acme;
 	color: white;
 }
 table-caption{
 	text-align: center;
+	font-family: acme;
 	color:white;
 	}
 	
@@ -163,6 +171,7 @@ table-caption{
 /*Footer*/
 
 footer {
+	font-family: acme;
     display: block;
 }
 
