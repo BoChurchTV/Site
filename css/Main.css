@@ -25,6 +25,11 @@ body {
 }
 
 
+p{
+	  font-family: acme;
+	
+}
+
 .header {
   padding: 0px;
   text-align: center;
