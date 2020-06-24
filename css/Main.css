@@ -93,6 +93,7 @@ div .div{
 }
 
 #title{
+	font-family: acme;
 	text-align:center;
 	text-shadow: 2px 2px black;
 	size: 133px;
@@ -100,6 +101,7 @@ div .div{
 }
 
 #intro{
+    font-family: acme;	
 	text-align:center;
 	color:white;
 
