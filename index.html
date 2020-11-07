@@ -256,9 +256,42 @@ for (i = 0; i < close.length; i++) {
 	  
 	</style>
 	
+	
+	<script>
+	function myFunction() {
+    var x = document.getElementById("centered_nav");
+    if (x.className === "rc_nav") {
+        x.className += " responsive";
+    } else {
+        x.className = "rc_nav";
+    }
+}
+
+</script>
+	
 	<tr>
-		<td colspan="10" rowspan="10" class="vid"> BoChurchTV | 10/09/2020 <br> <iframe width="560" height="315" src="https://www.youtube.com/embed/_ijxWb9sIVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </td>
-		<td colspan="10" rowspan="10" class="vid"> BCTVMusic | 7/06/2020 <br> <iframe width="560" height="315" src="https://www.youtube.com/embed/8OyELjXGiYE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </td>
+		<td colspan="10" rowspan="10" class="vid"> BoChurchTV | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UCP5Ne_L2zJeikrtwTaZy-Iw" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+function loadVideo(iframe) {
+  $.getJSON(reqURL + iframe.getAttribute('cid'),
+    function(data) {
+      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+      console.log(videoNumber);
+      var link = data.items[videoNumber].link;
+      id = link.substr(link.indexOf("=") + 1);
+      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+    }
+  );
+}
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++) {
+  loadVideo(iframes[i]);
+}
+</script></td>
+		<td colspan="10" rowspan="10" class="vid"> BCTVMusic | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UChdK0Xdf8sjei7EHhjPUoZQ" width="560" height="315" frameborder="0" allowfullscreen></iframe> </td>
 	</tr>
 		
 </table>
@@ -347,6 +380,6 @@ p.date{
 	padding: 0px;
 }
 </style>
-  <p class="date"> BoChurchTV © 2018 - 2020 | last edited by: BoChurchTV on 10/14/2020</p>
+  <p class="date"> BoChurchTV © 2018 - 2020 | last edited by: BoChurchTV on 11/06/2020</p>
 </html>
 
