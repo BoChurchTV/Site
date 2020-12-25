@@ -270,7 +270,7 @@ for (i = 0; i < close.length; i++) {
 </script>
 	
 	<tr>
-		<td colspan="10" rowspan="10" class="vid"> BoChurchTV | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UCP5Ne_L2zJeikrtwTaZy-Iw" width="560" height="315" frameborder="0" allowfullscreen></iframe> </td>
+		<td colspan="10" rowspan="10" class="vid"> BoChurchTV | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UCP5Ne_L2zJeikrtwTaZy-Iw" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -301,7 +301,26 @@ for (var i = 0, len = iframes.length; i < len; i++) {
 
 	<tr>
 		<td color="white">  <p align="center"> BoChurchTV Stats:<br> Created: June 18, 2010<br> 3,462 Views<br> 79 Videos<br> Channel Type:<br> Gaming</p> </td>
-		<td color="white"> <p align="center"> BCTVMusic Stats:<br> Created: April 26, 2017<br> 15,020 Views<br> 58 Videos<br> Channel Type:<br> Music</p> </td>
+		<td color="white"> <p align="center"> BCTVMusic Stats:<br> Created: April 26, 2017<br> 15,020 Views<br> 58 Videos<br> Channel Type:<br> Music</p> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+function loadVideo(iframe) {
+  $.getJSON(reqURL + iframe.getAttribute('cid'),
+    function(data) {
+      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+      console.log(videoNumber);
+      var link = data.items[videoNumber].link;
+      id = link.substr(link.indexOf("=") + 1);
+      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+    }
+  );
+}
+var iframes = document.getElementsByClassName('latestVideoEmbed');
+for (var i = 0, len = iframes.length; i < len; i++) {
+  loadVideo(iframes[i]);
+}
+</script></td>
 	</tr>
 
 	 
