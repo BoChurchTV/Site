@@ -215,11 +215,121 @@ for (i = 0; i < close.length; i++) {
 <!-- End of Alert thing -->
 
 <!-- Main Area -->
-<br>
-<br>
-<a class="e-widget no-button" href="https://gleam.io/G1w8A/500-sub-giveaway-minecraft-java-code" rel="nofollow">500 Sub Giveaway (Minecraft Java Code)</a>
-<script type="text/javascript" src="https://widget.gleamjs.io/e.js" async="true"></script>
+<style>
 
+
+.fire {
+  margin: 50px auto;
+  width: 80%;
+  max-width: 1000px;
+  height: 200px;
+
+  background-position: center center;
+  background-size: 1000px 200px;
+  border-radius: 10px;
+
+  overflow: hidden;
+    text-align: center;
+  vertical-align: middle;
+
+}
+.fire:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.Blazing {
+  display: inline-block;
+  margin: 0;
+
+    color: rgb(255, 115, 0);
+    font-size: 100px;
+  line-height: 50px;
+  min-width: 50px;
+  outline: none;
+  vertical-align: middle;
+    
+  text-shadow:
+        0 3px 20px red,
+        0 0 20px red,
+    0 0 10px orange,
+    4px -5px 6px yellow,
+    -4px -10px 10px yellow,
+    0 -10px 30px yellow;
+  animation: 2s Blazing infinite alternate linear;
+}
+
+@keyframes Blazing {
+  0%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+    0 0 10px orange,
+    0 0 0 yellow,
+    0 0 5px yellow,
+    -2px -5px 5px yellow,
+    4px -10px 10px yellow; }
+  25%   { text-shadow: 0 3px 20px red, 0 0 30px red,
+    0 0 20px orange,
+    0 0 5px yellow,
+    -2px -5px 5px yellow,
+    3px -10px 10px yellow,
+    -4px -15px 20px yellow; }
+  50%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+    0 -5px 10px orange,
+    -2px -5px 5px yellow,
+    3px -10px 10px yellow,
+    -4px -15px 20px yellow,
+    2px -20px 30px rgba(255,255,0,0.5); }
+  75%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+    0 -5px 10px orange,
+    3px -5px 5px yellow,
+    -4px -10px 10px yellow,
+    2px -20px 30px rgba(255,255,0,0.5),
+    0px -25px 40px rgba(255,255,0,0)}
+  100%   { text-shadow: 0 3px 20px red, 0 0 20px red,
+    0 0 10px orange,
+    0 0 0 yellow,
+    0 0 5px yellow,
+    -2px -5px 5px yellow,
+    4px -10px 10px yellow; }
+}
+</style>
+
+
+  <div class="dark fire">
+        <h1 class="Blazing" contenteditable="true">No Active Giveaways</h1>
+  </div>
+
+
+<!--Random Image -->
+
+<script type="text/javascript">
+// place your images in this array
+var random_images_array = ['SadRias.gif', 'SadDeku.gif', 'SadSirl.gif', 'SadGirl.gif'];
+    
+function getRandomImage(imgAr, path) {
+    path = path || 'Images/'; // default path here
+    var num = Math.floor( Math.random() * imgAr.length );
+    var img = imgAr[ num ];
+    var imgStr = '<img class = "img" src="' + path + img + '" alt = "">';
+    document.write(imgStr); document.close();
+}
+
+</script>
+
+<style>
+
+.img { border:none; display: block; margin-left: auto; margin-right: auto; width: 20%; }
+</style>
+
+<br>
+<div>
+    <!-- This script segment displays an image from the array -->
+    <script type="text/javascript">getRandomImage(random_images_array, 'images/')</script>
+</div>
+
+
+<!--END OF MAIN -->
 
 <table align="center" class="tableMobilize">
 
@@ -255,7 +365,7 @@ $('table').tableMobilize();
   <a href="https://www.twitter.com/BoChurchTV" target="_blank"><img src="Images/twitter.png"  alt="Twitter Logo" style="max-width:100%; height: auto;"></a>
   <a href="https://www.youtube.com/bochurchtv/" target="_blank"><img src="Images/youtube.png"  alt="YouTube Logo" style="max-width:100%; height: auto;"></a>
   <a href="https://www.youtube.com/channel/UChdK0Xdf8sjei7EHhjPUoZQ" target="_blank"><img src="Images/youtube2.png"  alt="YouTube Logo" style="max-width:100%; height: auto;"> </a>
-  <a href="https://vm.tiktok.com/ZMe1W4xbF/" target="_blank"><img src="Images/TikTok.png"  alt="TikTok logo" style="max-width:100%; height: auto;"> </a>
+  <a href="https://www.reddit.com/r/BoChurchTV/" target="_blank"><img src="Images/reddit.png"  alt="YouTube Logo" style="max-width:100%; height: auto;"> </a>
   <a href="https://www.facebook.com/bochurchtv/" target="_blank"><img src="Images/Facebook.png"  alt="Facebook Logo" style="max-width:100%; height: auto;"> </a>
   <a href="https://www.twitch.tv/bochurchtv/" target="_blank"><img src="Images/twitch.png"  alt="twitch Logo" style="max-width:100%; height: auto;"> </a>
   <a href="https://www.instagram.com/bochurchtv/" target="_blank"><img src="Images/instagram.png"  alt="Instagram Logo" style="max-width:100%; height: auto;"> </a> 
