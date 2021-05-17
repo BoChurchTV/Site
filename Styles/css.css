@@ -15,12 +15,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 5px 10%;
   background-color: #24252a;
 }
 
 .logo {
   cursor: pointer;
+  size: 120%;
+  padding: 0px -20px;
 }
 
 .nav__links a,
