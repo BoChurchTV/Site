@@ -150,6 +150,25 @@ body {
 	color:white;
 }
 
+#link{
+	font-family: B612;
+	text-align:center;
+	size: 133px;
+	color:white;
+	padding-bottom: 13px;
+}
+
+#item{
+	padding-right: 15px;
+	
+}
+
+#emp{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #intro{
     font-family: B612;	
 	text-align:center;
