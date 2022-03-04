@@ -20,7 +20,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px 10%;
-  background-color: #24252a;
+  background-color: #451926;
 }
 
 .logo {
@@ -142,7 +142,7 @@ body {
   margin: 0;
   font-size: 28px;
   font-family: B612;
-  background-color: #292b31;
+  background-color: #5C2233;
   color: white;
 }
 
@@ -232,7 +232,7 @@ a:link, a:visited {
     bottom: 0;
 	right: -10;
     width: 100%;
-    background-color: #24252a;
+    background-color: #451926;
     color: white;
     text-align: center;
 	
