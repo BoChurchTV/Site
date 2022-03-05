@@ -229,8 +229,9 @@ a:link, a:visited {
 
 .footer {
     left: 0;
-    bottom: 0;
+    padding-bottom: 0px;
 	right: -10;
+	padding-top: 10px;
     width: 100%;
     background-color: #451926;
     color: white;
