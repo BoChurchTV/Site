@@ -16,6 +16,7 @@ html {
 }
 
 header {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +25,9 @@ header {
 }
 
 .logo {
+  position: absolute;
+  left: 42%;
+  top: -2.5%;
   cursor: pointer;
   size: 120%;
   padding: 0px -20px;
@@ -32,13 +36,16 @@ header {
 .nav__links a,
 .cta,
 .overlay__content a {
+	display: fixed;
   font-family: B612;
   font-weight: 500;
   color: #edf0f1;
   text-decoration: none;
+  padding-left: 100px;
 }
 
 .nav__links {
+		display: fixed;
   list-style: none;
   display: flex;
 }
@@ -56,11 +63,13 @@ header {
 }
 
 .cta {
-  padding: 9px 25px;
+  padding: 19px 55px;
+    position: relative;
   background-color: #7289da;
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  left: 42%;
   transition: background-color 0.3s ease 0s;
 }
 
