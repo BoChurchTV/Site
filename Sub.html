@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Styles/css.css">
+        <link rel="stylesheet" href="Styles/css2.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
 		<link REL="SORTCUT ICON" href="images/KP1.png">
 		<title> KaitlynPlayz | Sub Count </title>
 		<meta name="author" content="KaitlynPlayz | Official site">
@@ -46,48 +48,67 @@
         <script type="text/javascript" src="mobile.js"></script>
 	<!-- NAV Bar Area -->
 
+<br><br>
+<table align="center" class="tableMobilize" id="center">
+	 <tr>
+		<td>
+		  <a class="logo1" align="center" href="/"><img src="images/ss.png" alt="logo"  height="100"></a>
+		</td>
+	</tr> 
+</table>
+
+
 <table align="center" class="tableMobilize" id="center">
 	<tr>
 		<td>
-		  <a class="logo1" align="center" href="/"><img src="images/KP1.png" alt="logo"  height="324"></a>
+
+		<p>Youtube Subscribers</p>
+		<iframe height="80px" width="300px" frameborder="0" src=https://livecounts.io/embed/youtube-live-subscriber-counter/UCP5Ne_L2zJeikrtwTaZy-Iw style="border: 0; width:300px; height:80px;"></iframe>
+
 		</td>
-	</tr>
-	<tr>
+		
+		&nbsp; &nbsp;
+		
 		<td>
-		<div id="Youtube" align="center">
-			YouTube Subscribers
-			<div id="subCount" id="center"></div>
-
-			<script>
-
-			// Get Subscribers
-			const youtubeKey = ' AIzaSyAPVDo_DXT8qlwxCkYHkK28tGnj21zkbPY';
-			const youtubeUser = ' UCP5Ne_L2zJeikrtwTaZy-Iw';
-			const subCount = document.getElementById('subCount');
-
-			let getSubscribers = () => {
-
-				fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${youtubeUser}&key=${youtubeKey}`)
-				.then(response => {
-					return response.json()
-				})
-				.then(data => {
-					console.log(data);
-					subCount.innerHTML = data["items"][0].statistics.subscriberCount;
-				})
-
-			}
-			
-			
-
-			getSubscribers();
-
-			</script>
-</div>
-
-		</td>
-			
+		
+		<p>Twitter Followers</p>
+		<iframe height="80px" width="300px" frameborder="0" src=https://livecounts.io/embed/twitter-live-follower-counter/thekaitlynplayz style="border: 0; width:300px; height:80px;"></iframe>
+		
+		</td>		
+		
 	</tr>
+	
+	<tr>
+	
+		<td>
+		
+		<p> TikTok Followers </p>
+		<iframe height="80px" width="300px" frameborder="0" src=https://livecounts.io/embed/tiktok-live-follower-counter/thekaitlynplayz style="border: 0; width:300px; height:80px;"></iframe>
+		
+		</td>
+	
+		&nbsp; &nbsp;
+	
+		<td>
+		
+		<p> Instagram Followers </p>
+		<iframe height="80px" width="300px" frameborder="0" src=https://livecounts.io/embed/instagram-live-follower-counter/thekaitlynplayz style="border: 0; width:300px; height:80px;"></iframe>
+		
+		</td>
+	</tr>
+	
+	<tr>
+		
+		<td>
+		
+		<p> Twitch Followers </p>
+		<iframe height="80px" width="300px" frameborder="0" src=https://livecounts.io/embed/twitch-live-follower-counter/thekaitlynplayz style="border: 0; width:300px; height:80px;"></iframe>	
+		
+		</td>
+		
+	</tr>
+	
+	
 </table>
 
 
@@ -129,7 +150,7 @@ p.date{
 	padding: 0px;
 }
 </style>
-  <p class="date"> KaitlynPlayz © 2018 - 2023 | last edited by: KaitlynPlayz on 1/1/2023</p>
+  <p class="date"> KaitlynPlayz © 2018 - 2023 | last edited by: KaitlynPlayz on 4/22/2023</p>
 		
     </body>
 </html>
