@@ -238,8 +238,18 @@ table-caption{
 	
 /* FOOTER */
 
+.m{
+	font-size: 15px;
+    width: 100%;
+	size: 5px;
+	font-style: italic;
+    text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
 a:link, a:visited {
-  color: white;
+  color: rgb(231, 69, 69);
   text-align: center;
   text-decoration: none;
   display: inline-block;
