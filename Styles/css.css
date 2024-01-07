@@ -37,7 +37,7 @@ header {
 .cta,
 .overlay__content a {
 	display: fixed;
-  font-family: B612;
+  font-family: Hammersmith One;
   font-weight: 500;
   color: #edf0f1;
   text-decoration: none;
@@ -150,13 +150,13 @@ header {
 body {
   margin: 0;
   font-size: 28px;
-  font-family: B612;
+  font-family: Hammersmith One;
   background-color: #5C2233;
   color: white;
 }
 
 #title{
-	font-family: B612;
+	font-family: Hammersmith One;
 	text-align:center;
 	text-shadow: 2px 2px black;
 	size: 133px;
@@ -164,7 +164,7 @@ body {
 }
 
 #link{
-	font-family: B612;
+	font-family: Hammersmith One;
 	text-align:center;
 	size: 133px;
 	color:white;
@@ -183,7 +183,7 @@ body {
 }
 
 #intro{
-    font-family: B612;	
+    font-family: Hammersmith One;	
 	text-align:center;
 	color:white;
 
@@ -203,7 +203,7 @@ body {
 
   table {
 	color:white;
-	font-family: B612;
+	font-family: Hammersmith One;
   }
 
 table{
@@ -211,18 +211,18 @@ table{
 	border-color: #3333FF;
 	border-collapse: collapse;
 	color:white;
-	font-family: B612;
+	font-family: Hammersmith One;
 	
 }
 
 table td 1{
 	background-color: #336666;
-	font-family: B612;
+	font-family: Hammersmith One;
 	color: white;
 }
 table-caption{
 	text-align: center;
-	font-family: B612;
+	font-family: Hammersmith One;
 	color:white;
 	}
 	
