@@ -147,12 +147,14 @@ header {
   }
 }
 
+
 body {
   margin: 0;
   font-size: 28px;
   font-family: 'Hammersmith One', cursive;
   background-color: #5C2233;
   color: white;
+  
 }
 
 #title{
