@@ -16,36 +16,28 @@ html {
 }
 
 header {
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10%;
+  padding: 30px 10%;
+  font-family: 'Hammersmith One', cursive;
   background-color: #451926;
 }
 
 .logo {
-  position: absolute;
-  left: 42%;
-  top: -2.5%;
   cursor: pointer;
-  size: 120%;
-  padding: 0px -20px;
 }
 
 .nav__links a,
 .cta,
 .overlay__content a {
-	display: fixed;
   font-family: 'Hammersmith One', cursive;
   font-weight: 500;
   color: #edf0f1;
   text-decoration: none;
-  padding-left: 100px;
 }
 
 .nav__links {
-		display: fixed;
   list-style: none;
   display: flex;
 }
@@ -63,18 +55,16 @@ header {
 }
 
 .cta {
-  padding: 19px 55px;
-    position: relative;
-  background-color: #7289da;
-  border: none;
+  padding: 9px 25px;
+  background-color: #5C2243;
+  border: 10px;
   border-radius: 50px;
   cursor: pointer;
-  left: 42%;
   transition: background-color 0.3s ease 0s;
 }
 
 .cta:hover {
-  background-color: #2c2f33;
+  background-color: rgba(0, 136, 169, 0.8);
 }
 
 /* Mobile Nav */
@@ -148,6 +138,29 @@ header {
 }
 
 
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+
 body {
   margin: 0;
   font-size: 28px;
@@ -155,6 +168,15 @@ body {
   background-color: #5C2233;
   color: white;
   
+}
+
+.discord {
+  color: #7289da;
+  background-color: #451926;
+  border-radius: 150px;
+  cursor: pointer;
+  transition: background-color 0.5s ease 0s;
+
 }
 
 #title{
@@ -251,7 +273,7 @@ table-caption{
 }
 
 a:link, a:visited {
-  color: rgb(231, 69, 69);
+  color: #e74545;
   text-align: center;
   text-decoration: none;
   display: inline-block;
