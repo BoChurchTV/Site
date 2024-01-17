@@ -68,7 +68,19 @@ body{
 	<div id="main">
     	<div class="fof">
         		<h1>Is KaitlynPlayz cute?</h1> <br><br><br>
-				<iframe width="500" height="380" src="images/gif/agree.gif" title="nice opinion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> <br><br><br>
+	
+
+				<img src="" data-random-image="images/gif/agree.gif images/gif/agree2.gif images/gif/agree3.gif images/gif/agree4.gif" alt="Agree!">
+				
+				<script>
+				const image = document.querySelector('img[data-random-image]');
+				const sources = image.dataset.randomImage.split(" ");
+				const randomSource = sources[Math.floor(Math.random() * sources.length)]
+				
+				image.setAttribute('src', randomSource);
+			</script>
+<br><br><br>
+				
 				<p> <a href="index.html"> Click here to go home</a> </p>
     	</div>
 	</div>
