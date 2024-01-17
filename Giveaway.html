@@ -122,40 +122,20 @@
 </style>
 
 
-  <div class="dark fire">
-        <h1 class="Blazing" contenteditable="true">No Active Giveaways</h1>
-  </div>
+<img src="" data-random-image="images/gif/SadRias.gif images/gif/SadDeku.gif images/gif/SadSirl.gif" alt="Agree!">
+				
+				<script>
+				const image = document.querySelector('img[data-random-image]');
+				const sources = image.dataset.randomImage.split(" ");
+				const randomSource = sources[Math.floor(Math.random() * sources.length)]
+				
+				image.setAttribute('src', randomSource);
+			</script>
 
-
-<!--Random Image -->
-
-<script type="text/javascript">
-// place your images in this array
-var random_images_array = ['SadRias.gif', 'SadDeku.gif', 'SadSirl.gif', 'SadGirl.gif'];
-    
-function getRandomImage(imgAr, path) {
-    path = path || 'Images/'; // default path here
-    var num = Math.floor( Math.random() * imgAr.length );
-    var img = imgAr[ num ];
-    var imgStr = '<img class = "img" src="' + path + img + '" alt = "">';
-    document.write(imgStr); document.close();
-}
-
-</script>
-
-<style>
-
-.img { border:none; display: block; margin-left: auto; margin-right: auto; width: 20%; }
-</style>
-<br><br><br><br>
-<br>
-<div>
-    <!-- This script segment displays an image from the array -->
-    <script type="text/javascript">getRandomImage(random_images_array, 'images/')</script>
-</div>
 
 
 <!--END OF MAIN -->
+
 
 <table align="center" class="tableMobilize" id="center">
 
