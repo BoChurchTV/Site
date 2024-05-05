@@ -8,7 +8,7 @@
 
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="Styles/Fanart.css">
   <link rel="stylesheet" href="styles/header.css">
   <link REL="SORTCUT ICON" href="images/kaitlynplayzLogo2.png">
 
@@ -32,32 +32,100 @@
 </head>
 <body>
 
-	<!-- NAV Bar Area -->
-  <header>
-    <a class="logo" href="/"><img src="images/kaitlynplayzLogo2.png" height="191px" alt="logo"></a>
+	<!--- Nav --->
+<style>
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    text-shadow: 4px 4px 4px #000;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) text-shadow,
+      400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) letter-spacing;
+  }
+  
+  .bee {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+    background: #741c2d;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border-radius: 15px;
+  }
+  
+  .nav {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .item a {
+    position: relative;
+    user-select: none;
+    font-size: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 20px;
+  }
+  
+  .item a:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #000;
+    transform: scaleX(0);
+    transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) transform;
+  }
+  
+  .item a:hover {
+    text-shadow: 1px 1px 1px #000;
+    letter-spacing: 5px;
+  }
+  
+  .item a:hover:before {
+    transform: scaleX(1);
+  }
+  
+  
+  </style>
+  <div class="bee">
+    <img src="images/kaitlynplayzLogo.png" id="no" class="fix" height= "10px" align="left">
     <nav>
-        <ul class="nav__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sponsors.html">Affiliates</a></li>
-            <li><a href="specs.html">Specs</a></li>
-            <li><a href="Fanart.html">Fanart</a></li>
-        </ul>
+      <ul class="nav">
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="Affiliates.html">Affiliates</a></li>
+        <li class="item"><a href="smps.html">SMPs</a></li>
+        <li class="item"><a href="specs.html">Specs</a></li>
+        <li class="item"><a href="Fanart.html">Fanart</a></li>
+      </ul>
     </nav>
-    <a class="cta" href="https://blockshopgroup.com/en-us/collections/kaitlynplayz" target="_blank">Merch</a>
-    <p class="menu cta">Menu</p>
-</header>
-<div class="overlay">
-    <a class="close">&times;</a>
-    <div class="overlay__content">
-        <a href="#">Home</a>
-        <a href="sponsors.html">Affiliates</a>
-        <a href="specs.html">Specs</a>
-        <a href="Fanart.html">Fanart</a>
-        <a href="https://blockshopgroup.com/en-us/collections/kaitlynplayz" target="_blank">Merch</a>
-    </div>
-</div>
-<script type="text/javascript" src="mobile.js"></script>
-	<!-- NAV Bar Area -->
+  </div>
+  
+  <!--- Nav --->
 
 
 
@@ -190,7 +258,7 @@ p.date{
 	padding: 0px;
 }
 </style>
-  <p class="date" color="#11111"> KaitlynPlayz © 2018 - 2024 | last edited by: KaitlynPlayz on 1/18/2024</p>
+  <p class="date" color="#11111"> KaitlynPlayz © 2018 - 2024 | last edited by: KaitlynPlayz on 5/05/2024</p>
 		<br>
 
 </body>

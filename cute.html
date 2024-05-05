@@ -1,82 +1,137 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Styles/css.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
-		<link REL="SORTCUT ICON" href="images/KP1.png">
-		<title> KaitlynPlayz | Cute? </title>
-		<meta name="author" content="KaitlynPlayz | Page Not Found">
-		<meta name="description" content="The Official site of KaitlynPlayz">
+  
+  <body>
+    <link rel="stylesheet" href="Styles/styleAffi.css">
+    <div class = "allpage">
 
-        <meta content="KaitlynPlayz | Cute?" property="og:title" />
-        <meta content="Is Kaitlyn cute?" property="og:description" />
-        <meta content="https://embed.com/this-is-the-site-url" property="og:url" />
-        <meta content="#AA0995" data-react-helmet="true" name="theme-color" />
-        <meta name="twitter:card" content="https://www.kaitlynplayz.xyz/images/cute.png" property='og:image'>
+      <title> TheKaitlynPlayz | Cute? </title>
+      <link REL="SORTCUT ICON" href="images/kaitlynplayzLogo.png">
+
+      <meta name="author" content="KaitlynPlayz | Cute?">
+      <meta name="description" content="The Official site of KaitlynPlayz">
+
+      <meta content="KaitlynPlayz | Official site" property="og:title" />
+      <meta content="The Official site of KaitlynPlayz" property="og:description" />
+      <meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+      <meta content="#5C2233" data-react-helmet="true" name="theme-color" />
+      <meta name="twitter:card" content="https://www.kaitlynplayz.xyz/images/kaitlynplayzLogo.png" property='og:image'>
 
 
-    </head>
-    <body>
-	
-	<style>
-	
-	*{
-    transition: all 0.6s;
+<!-- Cat follower-->
+
+
+	<!--[if IE]>
+  <script src="./oneko-ie6.js"></script>
+<![endif]-->
+<!--[if !IE]><!-->
+  <script src="./oneko.js"></script>
+<!--<![endif]-->
+
+
+<!-- Cat follower-->
+      
+<!--- Nav --->
+<style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html {
-    height: 100%;
+a {
+  text-decoration: none;
+  text-shadow: 4px 4px 4px #000;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) text-shadow,
+    400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) letter-spacing;
 }
 
-body{
-    font-family: 'Lato', sans-serif;
-    color: #888;
-    margin: 0;
+.bee {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-#main{
-    display: table;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px;
+  background: #741c2d;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  border-radius: 15px;
 }
 
-.fof{
-	  display: table-cell;
-	  vertical-align: middle;
+.nav {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.fof h1{
-	  font-size: 50px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
+.item a {
+  position: relative;
+  user-select: none;
+  font-size: 100%;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 20px;
 }
 
-.fof p{
-	  font-size: 25px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
-	  background-color: BFFF00;
+.item a:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 1px 1px 1px #000;
+  transform: scaleX(0);
+  transition: 400ms cubic-bezier(0.7, -0.6, 0.3, 1.2) transform;
 }
 
-@keyframes type{
-	  from{box-shadow: inset -3px 0px 0px #888;}
-	  to{box-shadow: inset -3px 0px 0px transparent;}
+.item a:hover {
+  text-shadow: 1px 1px 1px #000;
+  letter-spacing: 5px;
 }
-	
-	</style>
-	
-	
-	<div id="main">
-    	<div class="fof">
-        		<h1>Is KaitlynPlayz cute?</h1> <br><br><br>
-	
+
+.item a:hover:before {
+  transform: scaleX(1);
+}
+
+
+</style>
+<div class="bee">
+  <nav>
+    <ul class="nav">
+      <li class="item"><a href="index.html">Home</a></li>
+      <li class="item"><a href="Affiliates.html">Affiliates</a></li>
+      <li class="item"><a href="specs.html">Specs</a></li>
+      <li class="item"><a href="Fanart.html">Fanart</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!--- Nav --->
+    <img src="images/kaitlynplayzLogo.png" id="no" height= "100px" align="left">
+      <br>
+      
+    <h1 align = "center">
+        Is KaitlynPlayz cute? <br>
+    </h1>
+
+
+    <div id="main">
+    	<div class="fof">	
 
 				<img src="" data-random-image="images/gif/agree.gif images/gif/agree2.gif images/gif/agree3.gif images/gif/agree4.gif" alt="Agree!">
 				
@@ -89,9 +144,26 @@ body{
 			</script>
 <br><br><br>
 				
-				<p> <a href="index.html"> Click here to go home</a> </p>
     	</div>
 	</div>
+
+    
+    <br>
+    <br>
+      
+   
+    <hr size="2" width="100%" color="white">
+    
+<footer id="Center">
+
+  <p>The cat following you is <a href="oneko.js" color="pink">oneko.js</a> which is created by <a href="https://adryd.com">Adryd!</a></p>
+  <p> KaitlynPlayz © 2024 | last edited by: KaitlynPlayz on 5/05/2024</p>
+
+
+</footer>
+
+
+<!-- KOFI AREA -->
 
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
@@ -103,5 +175,14 @@ body{
   });
 </script>
 
-	</body>
-	</html>
+<!-- KOFI AREA-->
+
+
+
+<!--- LIVE TEST-->
+
+
+
+  </body>
+  
+</html>
