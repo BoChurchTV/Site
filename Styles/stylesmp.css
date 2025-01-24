@@ -84,6 +84,12 @@ img.three
   float: left;
 }
 
+img.four
+{
+  margin: 10px;
+  float: left;
+}
+
 img.five
 {
   margin: 10px;
