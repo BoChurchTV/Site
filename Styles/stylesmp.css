@@ -72,14 +72,14 @@ img.one
 img.two
 {
   margin: 10px;
-  width: 25%;
+  width: 35%;
   height: 25%;
   float: right;
 }
 img.three
 {
   margin: 10px;
-  width: 35%;
+  width: 25%;
   height: 25%;
   float: left;
 }
