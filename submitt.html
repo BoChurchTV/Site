@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Message Board</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff77b7;
+            margin-bottom: 1rem;
+            font-family: 'Pacifico', cursive;
+        }
+
+        p {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid #f0c0d0;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            background-color: #fdfdfd;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #ff77b7;
+            background-color: #fff0f5;
+        }
+
+        input[type="file"] {
+            margin-top: 15px;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            background-color: #ff77b7;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #ff66a1;
+        }
+
+        button {
+            padding: 12px 20px;
+            border-radius: 12px;
+            background-color: #ff77b7;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff66a1;
+            transform: scale(1.05);
+        }
+
+        .message-board {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        .message {
+            background-color: #fff0f5;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .time {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .reset-button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #ff66a1;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-button:hover {
+            background-color: #ff4d92;
+            transform: scale(1.05);
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .message img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .message video {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anonymous Message Board</h1>
+    <p>Share your thoughts anonymously with cute messages and media!</p>
+
+    <div class="container">
+        <!-- Form to submit a message and media -->
+        <textarea id="messageInput" placeholder="Write your message here..." rows="4"></textarea>
+        <br>
+        <label for="mediaInput" style="font-size: 1.1rem;">Upload an image or GIF:</label>
+        <input type="file" id="mediaInput" accept="image/*,video/*">
+        <br><br>
+        <button onclick="submitMessage()">Submit</button>
+    </div>
+
+    <!-- Message Board Section -->
+    <div class="message-board" id="messageBoard">
+        <!-- Messages will appear here -->
+    </div>
+
+    <!-- Reset Button -->
+    <button class="reset-button" onclick="resetMessages()">Reset Messages</button>
+    <div id="errorMessage" class="error-message"></div>
+
+    <script>
+        // Webhook URL for Discord (replace with your own)
+        const discordWebhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+
+        // Max file size for Discord (8MB = 8 * 1024 * 1024 = 8388608 bytes)
+        const MAX_FILE_SIZE = 8388608;
+
+        // Load saved messages from localStorage (if any)
+        window.onload = function() {
+            loadMessages();
+            // Refresh messages every 30 seconds
+            setInterval(loadMessages, 30000); // 30 seconds = 30000 ms
+        };
+
+        // Function to submit a message
+        function submitMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messageText = messageInput.value.trim();
+            const mediaInput = document.getElementById('mediaInput');
+            const mediaFile = mediaInput.files[0];
+            const currentTime = new Date().toLocaleString();
+            let mediaUrl = '';
+
+            if (messageText === "" && !mediaFile) {
+                alert("Please enter a message or upload a media file.");
+                return;
+            }
+
+            // Check if the file exceeds the max size (8MB)
+            if (mediaFile && mediaFile.size > MAX_FILE_SIZE) {
+                alert("The file size exceeds the 8MB limit. Please upload a smaller image or video.");
+                return;
+            }
+
+            // If a media file is selected, convert it to a URL (base64 or URL)
+            if (mediaFile) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    mediaUrl = event.target.result;
+
+                    // Save the message and media to localStorage
+                    saveMessage(messageText, mediaUrl, currentTime);
+
+                    // Send the message and media to Discord
+                    sendToDiscord(messageText, mediaUrl, currentTime);
+                };
+                reader.readAsDataURL(mediaFile);
+            } else {
+                // Save message with no media if only a message is entered
+                saveMessage(messageText, mediaUrl, currentTime);
+
+                // Send the message to Discord
+                sendToDiscord(messageText, mediaUrl, currentTime);
+            }
+
+            // Clear the input fields
+            messageInput.value = "";
+            mediaInput.value = "";
+
+            // Reload the messages
+            loadMessages();
+        }
+
+        // Function to save the message and media
+        function saveMessage(message, mediaUrl, time) {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.push({ message, mediaUrl, time });
+            localStorage.setItem('messages', JSON.stringify(messages));
+        }
+
+        // Function to load all messages from localStorage and display them
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const messageBoard = document.getElementById('messageBoard');
+            messageBoard.innerHTML = ""; // Clear the message board before reloading
+
+            // Loop through messages and display each one
+            messages.forEach(msg => {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.innerHTML = `
+                    <p>${msg.message}</p>
+                    ${msg.mediaUrl ? `<img src="${msg.mediaUrl}" alt="Media" />` : ''}
+                    <p class="time">Submitted at: ${msg.time}</p>
+                `;
+                messageBoard.appendChild(messageDiv);
+            });
+        }
+
+        // Function to send the message to Discord via webhook
+        function sendToDiscord(message, mediaUrl, time) {
+            const discordMessage = {
+                content: `**New Anonymous Message**\n${message}\n*Submitted at: ${time}*`,
+                embeds: []
+            };
+
+            // If there's media, include it as an embed
+            if (mediaUrl) {
+                discordMessage.embeds.push({
+                    image: {
+                        url: mediaUrl
+                    }
+                });
+            }
+
+            // Send the data to Discord webhook
+            fetch(discordWebhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(discordMessage)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to send message to Discord');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Message sent to Discord:', data);
+            })
+            .catch(error => {
+                console.error('Error sending message to Discord:', error);
+            });
+        }
+
+        // Function to reset messages with password protection
+        function resetMessages() {
+            const password = prompt("Enter password to reset messages:");
+
+            // Check if the password matches "Catgirl"
+            if (password === "Catgirl") {
+                localStorage.removeItem('messages'); // Clear messages from localStorage
+                loadMessages(); // Reload the board (should be empty now)
+                document.getElementById('errorMessage').innerHTML = "Messages have been reset.";
+            } else {
+                document.getElementById('errorMessage').innerHTML = "Incorrect password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
