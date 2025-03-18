@@ -4,7 +4,7 @@ header {
     align-items: center;
     padding: 30px 10%;
     font-family: 'Hammersmith One', cursive;
-    background-color: #451926;
+    background-color: #BB99DB;
   }
   
   .logo {
@@ -40,7 +40,7 @@ header {
   
   .cta {
     padding: 9px 25px;
-    background-color: #5C2243;
+    background-color: #C5A0E6;
     border: 10px;
     border-radius: 50px;
     cursor: pointer;

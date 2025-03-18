@@ -13,11 +13,11 @@ div.allpage
 {
   width: 50%;
   margin: auto; 
-  background: #ac2a46;
+  background: #5B4F60;
   padding: 20px;
   opacity: 0.95;
   border-radius: 20px;
-  border:5px solid white; 
+  border:5px solid #C5A0E6; 
 }
 
 #no {
@@ -41,26 +41,25 @@ hr
 
 h1
 {
-  
-  color: #ED9121;
+  color: #B9A4C0;
   font-size: 50px;
 }
 h2
 {
   font-size: 40px;
   padding-right:50px;
-  color: #ED9121;
+  color: #B9A4C0;
 }
 h3
 {
   font-size: 40px;
-  color: #ED9121;
+  color: #B9A4C0;
 }
 h4
 {
   font-size: 40px;
   padding-left:10px;
-  color: #ED9121;
+  color: #B9A4C0;
 }
 img.one
 {

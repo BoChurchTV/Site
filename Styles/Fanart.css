@@ -8,7 +8,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: url("https://www.kaitlynplayz.xyz/images/Fanart/@hikarishini4.jpg") no-repeat center fixed;
+  background: url("https://www.kaitlynplayz.xyz/images/Fanart/shini.jpg") no-repeat center fixed;
 }
 
 img {
@@ -71,7 +71,7 @@ img.fix {
   bottom: 0;
   left: 0;
   right: 0;
-  color: #FF0099;
+  color: #ffffff;
   text-shadow: 0 0 1px #000;
   opacity: 0.8;
   padding: 1em;
@@ -92,7 +92,7 @@ img.fix {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(25, 25, 25, 0);
+  background: rgba(187, 48, 48, 0);
   box-shadow: 0 0 30px #000;
   display: flex;
   pointer-events: none;
