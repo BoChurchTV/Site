@@ -1,87 +1,167 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Styles/css.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One" rel="stylesheet">
-		<link REL="SORTCUT ICON" href="images/Paw.png">
-		<title> KaitlynPlayz | Page Not Found </title>
-		<meta name="author" content="KaitlynPlayz | Page Not Found">
-		<meta name="description" content="The Official site of KaitlynPlayz">
-    </head>
-    <body>
-
-	<style>
-	
-	*{
-    transition: all 0.6s;
-}
-
-html {
-    height: 100%;
-}
-
-body{
-    font-family: 'Lato', sans-serif;
-    color: #888;
-    margin: 0;
-}
-
-#main{
-    display: table;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-}
-
-.fof{
-	  display: table-cell;
-	  vertical-align: middle;
-}
-
-.fof h1{
-	  font-size: 50px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
-}
-
-.fof p{
-	  font-size: 25px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
-	  background-color: BFFF00;
-}
-
-@keyframes type{
-	  from{box-shadow: inset -3px 0px 0px #888;}
-	  to{box-shadow: inset -3px 0px 0px transparent;}
-}
-	
-	</style>
-	
-	
-	<div id="main">
-    	<div class="fof">
-        		<h1>Error 404: Page Not Found</h1> <br><br><br>
-				<a class="logo3" href="index.html"><img src="images/NewLogo.png" alt="logo" height="330px" ></a> <br><br><br>
-				<p> <a href="index.html"> Click here to go home</a> </p>
-    	</div>
-	</div>
-
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('kaitlynplayz', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#ff38b8',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
-
-	</body>
-	</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaitlynPlayz | Page Not Found</title>
+    <link rel="stylesheet" href="Styles/css.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One" rel="stylesheet">
+    <link rel="icon" href="images/Paw.png">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            background-color: #574B5E;
+            color: #BC99DB;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            cursor: url('images/cat-cursor.png'), auto;
+            position: relative;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        p {
+            font-size: 20px;
+            transition: opacity 1s ease-in-out;
+        }
+        .character {
+            width: 500px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .countdown {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            background-color: #CFAAF2;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 200px;
+            text-align: center;
+            transition: background-color 1s linear, color 1s linear;
+        }
+        .pause-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .pause-button img {
+            width: 20px;
+            height: 20px;
+        }
+        .kofi-button {
+            margin-top: 20px;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes flash {
+            0% { color: red; }
+            50% { color: orange; }
+            100% { color: yellow; }
+        }
+    </style>
+    <script>
+        let countdown = 30;
+        let countdownPaused = false;
+        let interval;
+        let messages = [
+            "Looks like you've taken a wrong turn...",
+            "You seem lost in the void...",
+            "This isn't the page you were looking for...",
+            "404? More like lost in space!",
+            "Oops! You've wandered too far...",
+            "This page doesn’t exist... or does it?",
+            "You broke the internet... kinda.",
+            "Nope, not here! Try again!",
+            "Even my cat is confused...",
+            "You’re off the map, adventurer!",
+            "Not all who wander are lost... except you.",
+            "This page took an unexpected vacation!",
+            "A wild 404 appears! What will you do?",
+            "If this were Minecraft, you'd be in the void...",
+            "Don't cry! We'll find the right page!"
+        ];
+        
+        function changeMessage() {
+            let errorMessage = document.getElementById("error-message");
+            errorMessage.style.opacity = 0;
+            setTimeout(() => {
+                let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                errorMessage.innerText = randomMessage;
+                errorMessage.style.opacity = 1;
+            }, 1000);
+        }
+        
+        function startCountdown() {
+            setInterval(changeMessage, 10000);
+            interval = setInterval(() => {
+                if (!countdownPaused) {
+                    countdown--;
+                    document.getElementById("countdown-text").innerText = `Redirecting in ${countdown} seconds...`;
+                    let colorIntensity = Math.floor((countdown / 30) * 255);
+                    let backgroundColor = `rgb(${colorIntensity + 50}, ${colorIntensity}, ${colorIntensity + 200})`;
+                    let textColor = colorIntensity < 128 ? "#FFFFFF" : "#000000";
+                    document.getElementById("countdown-box").style.backgroundColor = backgroundColor;
+                    document.getElementById("countdown-text").style.color = textColor;
+                    if (countdown <= 5) {
+                        document.getElementById("countdown-text").style.animation = "flash 0.5s infinite alternate";
+                    }
+                    if (countdown <= 0) {
+                        clearInterval(interval);
+                        window.location.href = "index.html";
+                    }
+                }
+            }, 1000);
+        }
+        
+        function toggleCountdown() {
+            countdownPaused = !countdownPaused;
+            document.getElementById("pause-icon").src = countdownPaused ? "images/play-icon.png" : "images/pause-icon.png";
+        }
+        
+        window.onload = function() {
+            let audio = new Audio('https://www.myinstants.com/media/sounds/sad-violin.mp3');
+            audio.volume = 0.05;
+            audio.play();
+            startCountdown();
+            changeMessage();
+        };
+    </script>
+</head>
+<body>
+    <h1>Oops! 404 Error</h1>
+    <p id="error-message">Looks like you've taken a wrong turn...</p>
+    <a href="index.html"><img src="images/NewLogo.png" alt="Mascot" class="character"></a>
+    <div id="countdown-box" class="countdown">
+        <span id="countdown-text">Redirecting in 30 seconds...</span>
+        <button class="pause-button" onclick="toggleCountdown()">
+            <img id="pause-icon" src="images/pause-icon.png" alt="Pause">
+        </button>
+    </div>
+    <div class="kofi-button">
+        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+        <script>
+            kofiWidgetOverlay.draw('kaitlynplayz', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.background-color': '#ff38b8',
+                'floating-chat.donateButton.text-color': '#fff'
+            });
+        </script>
+    </div>
+</body>
+</html>
