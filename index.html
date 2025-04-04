@@ -17,9 +17,57 @@
       <meta content="#5C2233" data-react-helmet="true" name="theme-color" />
       <meta name="twitter:card" content="https://www.kaitlynplayz.xyz/images/NewLogo.png" property='og:image'>
 
+<!--- Language 
+
+<script>
+  function toggleLanguageMenu() {
+    var menu = document.getElementById("language-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
+<style>
+  .language-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .language-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .language-menu button {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<button class="language-button" onclick="toggleLanguageMenu()">
+  <img src="images/language-icon.png" alt="Language" width="30" height="30">
+</button>
+<div id="language-menu" class="language-menu">
+  <button onclick="alert('Language set to English')">English</button>
+  <button onclick="alert('Language set to Spanish')">Español</button>
+  <button onclick="alert('Language set to Danish')">Dansk</button>
+  <button onclick="alert('Language set to Korean')">한국어</button>
+  <button onclick="alert('Language set to Japanese')">日本語</button>
+</div>
 
 
-
+-->
 <!-- Cat follower-->
 
 
@@ -326,6 +374,23 @@ td {
       <tr>
         <td> <a class="twitter-timeline" href="https://twitter.com/TheKaitlynPlayz?ref_src=twsrc%5Etfw" width="350" height="500" data-theme="dark">Tweets by TheKaitlynPlayz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> </td>
         <td> <iframe src="https://discordapp.com/widget?id=166574514799509505&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></td>
+      </tr>
+
+      <tr>
+        <td>
+        <script>
+          import LiveStatusPanel from "../components/LiveStatusPanel";
+
+export default function Home() {
+  return (
+    <div className="flex justify-center items-center h-screen bg-[#23272a]">
+      <LiveStatusPanel />
+    </div>
+  );
+}
+      </script>
+        </td>        
+        
       </tr>
       <tr>    
     </table>
