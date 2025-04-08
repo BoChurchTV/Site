@@ -160,6 +160,16 @@ nav {
   transform: scaleX(1);
 }
 
+    /* Responsive layout: side-by-side on larger screens */
+    @media (min-width: 768px) {
+      .container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+      }
+      .video, .text {
+        flex: 1 1 50%;
+      }
+    }
 
 </style>
 <div class="bee">
@@ -183,21 +193,19 @@ nav {
     </h1>
 
 
-    <div>
-		<div>
-			<img class= "oneee" id="no" src="images/KaitlynNewLook.png">
-		</div>
-		
-<p>
-  <br>
-  HERRO!!!! I'm Kaitlyn, aka TheKaitlynPlayz, a passionate gamer and content creator who’s been sharing my love for gaming since starting my YouTube channel on June 18, 2010. With over 69.8k views and 282 videos, I dive into the world of Minecraft and beyond, proudly representing communities like AdultsCraft SMP and TwitchSMP. As a trans creator, I bring my authentic self to every stream and video, connecting with my all my fans through fun, engaging content. When I’m not gaming, you can find me on Twitter/X , or hanging out with my awesome community on Discord. Let’s play, chat, and build something amazing together!
-
-
-<br><br>  
-
-
-		</p>
-	</div>
+    <div class="container">
+      <div class="video">
+        <video loop muted autoplay height="480" width="340">
+          <source src="Images/Boogiewoogie.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="text">
+        <p>
+          HERRO!!!! I'm Kaitlyn, aka TheKaitlynPlayz, a passionate gamer and content creator who’s been sharing my love for gaming since starting my YouTube channel on June 18, 2010. With over 69.8k views and 282 videos, I dive into the world of Minecraft and beyond, proudly representing communities like AdultsCraft SMP and TwitchSMP. As a trans creator, I bring my authentic self to every stream and video, connecting with my all my fans through fun, engaging content. When I’m not gaming, you can find me on Twitter/X , or hanging out with my awesome community on Discord. Let’s play, chat, and build something amazing together!
+        </p>
+      </div>
+    </div>
     <br>
     <br>
    
