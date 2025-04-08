@@ -1,0 +1,141 @@
+body {
+    text-align: center;
+    background-color: #D1A7F4; /* Updated base background color */
+    padding: 30px;
+    margin: 0;
+    background-image: linear-gradient(135deg, #D1A7F4, #6F4990); /* Gradient background */
+  }
+  
+  h1 {
+    color: #6F4990; /* Purple shade */
+    font-size: 36px;
+    font-family: "Delius", cursive;
+    margin-bottom: 30px;
+  }
+
+
+
+  
+  #rewardInput {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #BAA3C1; /* Light purple border */
+    font-size: 16px;
+    width: 250px;
+    background-color: #BAA3C1; /* Light purple background */
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #668DD5; /* Light blue color */
+    font-family: "Comic Neue", cursive;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+  }
+  
+  button:hover {
+    background-color: #5C4F6E; /* Darker purple when hovered */
+  }
+  
+  #itemList {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .list-item {
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+    color: #6F4990; /* Purple text color */
+    font-weight: bold;
+    background-color: #BAA3C1; /* Light purple background */
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .list-item:hover {
+    transform: scale(1.05);
+  }
+  
+  #resultText {
+    margin-top: 30px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #6F4990; /* Purple text */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 2px 2px 10px rgba(255, 72, 161, 0.6), 0px 0px 25px rgba(255, 72, 161, 0.3);
+  }
+  
+
+
+  
+  button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #clearBtn, #removeLastBtn, #exportBtn, #importBtn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  #listInstructions p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6F4990; /* Purple text */
+  }
+  
+  #infoMessage {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #6F4990;
+    background-color: #5C4F6E; /* Darker purple background for info section */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Random item color (FFA64F) - Will be applied via JS for the randomly selected item */
+  .random-item {
+    background-color: #FFA64F; /* Orange color */
+    color: white;
+  }
+  
+  /* Footer/Info Banner */
+footer {
+    background-color: #6F4990; /* Purple background for footer */
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+}
+
+/* Footer Message Styling */
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

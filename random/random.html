@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Picker</title>
+    <!-- Link to Google Fonts for cute, modern text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="1">🎉 Reward/Punishment Picker 🎉</h1>
+        
+        <div class="input-section">
+            <input type="text" id="rewardInput" placeholder="Add a reward/punishment" />
+            <button id="addBtn">Add to List</button>
+        </div>
+        
+        <div>
+            <button id="pickBtn">Pick a Random Item</button>
+            <p id="resultText"></p>
+        </div>
+
+        <div class="action-buttons">
+            <button id="clearBtn">Clear List</button>
+            <button id="removeLastBtn">Remove Last Item</button>
+            <button id="exportBtn">Export List</button>
+            <input type="file" id="importBtn" style="display: none;">
+            <button id="importFileBtn">Import List</button>
+        </div>
+
+        <div class="list-container">
+            <p>Rewards/Punishments are listed below:</p>
+            <ul id="itemList"></ul>
+        </div>
+
+    </div>
+
+
+    
+        <!-- Footer -->
+        <footer>
+            <p>This site does not store data! Please Export if you want to use your list in the future.</p>
+        </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
