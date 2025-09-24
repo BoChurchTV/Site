@@ -159,7 +159,99 @@ nav {
     <br>
    
     <hr size="2" width="100%" color="white">
+    <!-- KOFI AREA -->
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('kaitlynplayz', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#ff38b8',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+
+<!-- KOFI AREA-->
+
+<!--Live or Not Live-->
+<style>
+    /* Popup Badge */
+    #live-popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+      animation: fadeIn 0.6s ease-in-out;
+      z-index: 9999;
+    }
+    .live {
+      background: rgb(236, 86, 86);
+    }
+    .offline {
+      background: rgb(70, 69, 69);
+    }
+    #live-popup a {
+      color: whitesmoke;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <div id="live-popup"></div>
+
+  <script>
+    const clientId = "pw1nfug0rr3xcwx42l866cuf16yaqy";     // replace with your Twitch Client ID
+    const clientSecret = "oz7kdrl29fs8i9bbjgfx66368hc1n7"; // replace with your Twitch Client Secret
+    const channelName = "TheKaitlynPlayz";    // replace with the Twitch username
+    async function getAccessToken() {
+      const response = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`, {
+        method: "POST"
+      });
+      const data = await response.json();
+      return data.access_token;
+    }
+
+    async function checkLive() {
+      const token = await getAccessToken();
+      const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${channelName}`, {
+        headers: {
+          "Client-ID": clientId,
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      const data = await response.json();
       
+      const popup = document.getElementById("live-popup");
+
+      if (data.data && data.data.length > 0) {
+        // Stream is live
+        popup.innerHTML = `<a href="https://twitch.tv/${channelName}" target="_blank">🔴 LIVE</a>`;
+        popup.className = "live";
+        popup.style.display = "block";
+      } else {
+        // Stream is offline
+        popup.innerText = "🟠 Not Live";
+        popup.className = "offline";
+        popup.style.display = "block";
+      }
+    }
+
+    checkLive();
+  </script>
+
+
+
+<!--End or Live or Not Live-->
+
     <h2 align = "middle">
     Vtuber Father
     </h2>
@@ -235,7 +327,7 @@ Kaitlyn is infamous for her use of jokes and being cute while also being the mos
    <sub> Dancey Dance Gif made by <a href="https://x.com/pearcups" target="_blank">Pearcups</a></sub>
 
 	</div>
-       
+
    
       
       <hr size="2" width="100%" color="white">
@@ -248,73 +340,61 @@ Kaitlyn is infamous for her use of jokes and being cute while also being the mos
       
 <!-- YOutube Videos Area-->
 
-      <script>
-        function myFunction() {
-          var x = document.getElementById("centered_nav");
-          if (x.className === "rc_nav") {
-              x.className += " responsive";
-          } else {
-              x.className = "rc_nav";
-          }
-      }
-      
-      </script>
-        <style>
+       <style>
 
-td {
-  display: contents;
+    .video-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    iframe {
+      width: 420px;
+      height: 236px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.6);
+    }
+        
+       </style>
 
+     <div class="video-container" id="videos"></div>
 
-        </style>
-<tr>
-  <br>
-          <td colspan="10" rowspan="10" class="vid" id="center"> KaitlynPlayz | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UCP5Ne_L2zJeikrtwTaZy-Iw" width="560" height="315" frameborder="0" allowfullscreen></iframe> </td>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script>
-      var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-      function loadVideo(iframe) {
-        $.getJSON(reqURL + iframe.getAttribute('cid'),
-          function(data) {
-            var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-            console.log(videoNumber);
-            var link = data.items[videoNumber].link;
-            id = link.substr(link.indexOf("=") + 1);
-            iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
-          }
-        );
+  <script>
+    const apiKey = "AIzaSyAub2ZxSlibfhoxNMe2JWrKoEAVt1WX7Xg"; // Replace with your API key
+    const channelIds = [
+      "UCP5Ne_L2zJeikrtwTaZy-Iw", // Replace with first channel ID
+      "UCYZHLMOXOBn6AmKdNiII-fA"  // Replace with second channel ID
+    ];
+
+    async function getLatestVideo(channelId) {
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=1`
+      );
+      const data = await response.json();
+      if (data.items && data.items.length > 0) {
+        return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
       }
-      var iframes = document.getElementsByClassName('latestVideoEmbed');
-      for (var i = 0, len = iframes.length; i < len; i++) {
-        loadVideo(iframes[i]);
+      return null;
+    }
+
+    async function loadVideos() {
+      const container = document.getElementById("videos");
+      for (let channelId of channelIds) {
+        const videoUrl = await getLatestVideo(channelId);
+        if (videoUrl) {
+          const iframe = document.createElement("iframe");
+          iframe.src = videoUrl;
+          iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+          container.appendChild(iframe);
+        }
       }
-      </script>
-</tr>
-          
-<tr>
-  <br>
-          <td colspan="10" rowspan="10" class="vid" id="center"> KaitlynPlayz-VODs | Auto Updates <br> <iframe class="latestVideoEmbed" vnum='0' cid="UCYZHLMOXOBn6AmKdNiII-fA" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script>
-      var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-      function loadVideo(iframe) {
-        $.getJSON(reqURL + iframe.getAttribute('cid'),
-          function(data) {
-            var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-            console.log(videoNumber);
-            var link = data.items[videoNumber].link;
-            id = link.substr(link.indexOf("=") + 1);
-            iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
-          }
-        );
-      }
-      var iframes = document.getElementsByClassName('latestVideoEmbed');
-      for (var i = 0, len = iframes.length; i < len; i++) {
-        loadVideo(iframes[i]);
-      }
-      </script>
-</tr>
+    }
+
+    loadVideos();
+  </script>
 
 <!-- YOutube Videos Area-->
 
@@ -344,44 +424,7 @@ td {
     
     <br>
       <hr size="2" width="100%" color="white">
-   <h4 align = "left">
-    Viewable socials
-    </h4> 
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@thekaitlynplayz" data-unique-id="thekaitlynplayz" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@thekaitlynplayz?refer=creator_embed">@thekaitlynplayz</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-    </p>
-    <br><br>
-    <table align="center" class="tableMobilize" id="center">
-    </table>
-        <br> 
-        <table align="center" class="tableMobilize" id="center">
-    
-      <tr>
-        <td> <iframe src="https://discordapp.com/widget?id=166574514799509505&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></td>
-      </tr>
-
-      <tr>
-        <td>
-        <script>
-          import LiveStatusPanel from "../components/LiveStatusPanel";
-
-export default function Home() {
-  return (
-    <div className="flex justify-center items-center h-screen bg-[#23272a]">
-      <LiveStatusPanel />
-    </div>
-  );
-}
-      </script>
-        </td>        
-        
-      </tr>
-      <tr>    
-    </table>
-
-    <br>
-    <br>
-      <hr size="2" width="100%" color="white">
-   <h4 align = "left">
+   <h4 align = "middle">
     Friends
     </h4> 
   
@@ -542,7 +585,7 @@ pre {
     <br>
     <br>
       <hr size="2" width="100%" color="white">
-   <h4 align = "left">
+   <h4 align = "middle">
     Kaitlyn's 88x31
     </h4> 
     <a href=" target="_blank"><img src="Images/8831.png"  alt="kaitlyn's 88x31""></a>     <br>     <br>
@@ -569,19 +612,7 @@ pre {
 </footer>
 
 
-<!-- KOFI AREA -->
 
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('kaitlynplayz', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#ff38b8',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
-
-<!-- KOFI AREA-->
 
 
 

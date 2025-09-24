@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twitch Live Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0e0e10;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Popup Badge */
+    #live-popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+      animation: fadeIn 0.6s ease-in-out;
+      z-index: 9999;
+    }
+    .live {
+      background: red;
+    }
+    .offline {
+      background: orange;
+    }
+    #live-popup a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div id="live-popup"></div>
+
+  <script>
+    const clientId = "pw1nfug0rr3xcwx42l866cuf16yaqy";     // replace with your Twitch Client ID
+    const clientSecret = "oz7kdrl29fs8i9bbjgfx66368hc1n7"; // replace with your Twitch Client Secret
+    const channelName = "TheKaitlynPlayz";    // replace with the Twitch username
+    async function getAccessToken() {
+      const response = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${clientId}&client_secret=${clientSecret}&grant_type=client_credentials`, {
+        method: "POST"
+      });
+      const data = await response.json();
+      return data.access_token;
+    }
+
+    async function checkLive() {
+      const token = await getAccessToken();
+      const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${channelName}`, {
+        headers: {
+          "Client-ID": clientId,
+          "Authorization": `Bearer ${token}`
+        }
+      });
+      const data = await response.json();
+      
+      const popup = document.getElementById("live-popup");
+
+      if (data.data && data.data.length > 0) {
+        // Stream is live
+        popup.innerHTML = `<a href="https://twitch.tv/${channelName}" target="_blank">🔴 LIVE</a>`;
+        popup.className = "live";
+        popup.style.display = "block";
+      } else {
+        // Stream is offline
+        popup.innerText = "🟠 Not Live";
+        popup.className = "offline";
+        popup.style.display = "block";
+      }
+    }
+
+    checkLive();
+  </script>
+</body>
+</html>
